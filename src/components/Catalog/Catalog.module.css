@@ -1,0 +1,5 @@
+.cardList{
+    display: flex;
+    gap: 32px 48px;
+    flex-wrap: calc((100% - 4*32px)/12);
+}

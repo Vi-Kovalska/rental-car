@@ -1,0 +1,72 @@
+:root {
+ --main-color-black: #101828;
+ --main-color-dark-grey: #8E929A;
+ --main-color-minor-grey: #8D929A;
+--main-color-blue: #3470FF;
+--main-color-dark-blue: #0B44CD;
+--main-color-light-grey: #DADDE1;
+--main-color-blue-white: #F2F4F7;
+--main-color-gray-white: #F7F7F7;
+--main-color-white: #FFFFFF;
+--font-family: "Manrope", sans-serif;
+--main-transition: 0,3s, ease;
+margin: 0;
+padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  line-height: var(--line-height-main);
+  background-color: var(--main-color-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 0px;
+  font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25;
+    color: var(--main-color-white);
+    border: none;
+    border-radius: 12px;
+    width: 276px;
+    height: 44px;
+  background-color: var(--main-color-blue);
+  transition: background-color var(--main-transition);
+}
+button:hover, button:focus{
+  background-color: var(--main-color-dark-blue);
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+

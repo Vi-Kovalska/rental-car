@@ -1,0 +1,61 @@
+.wrapperCard{
+    width: 276px;
+        height: 424px;
+        display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+          padding: 0px;
+}
+.wrapperImg{
+    border-radius: 14px;
+        width: 276px;
+        height: 268px;
+        margin-bottom: 16px;
+}
+.iconFavorite{
+    fill: var(--main-color-blue-white);
+    transition: fill var(--main-transition);
+}
+.iconFavorite:hover, .iconFavorite:focus, .iconFavorite:active{
+    fill: var(--main-color-blue);
+}
+.btnFavorite{
+    border: none;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    transition: background-color var(--main-transition);
+    position: fixed;
+        top: 16px;
+        right: 16px;
+}
+.btnFavorite:hover, .btnFavorite:focus, .btnFavorite:active{
+    background-color: var(--main-color-blue);
+}
+.wrapperSecondTitleAndPrice{
+  display: flex;
+  justify-content: space-between;  
+  margin-bottom: 8px;
+}
+.titleSecond{
+    font-weight: 500;
+        font-size: 16px;
+        line-height: 1.25;
+        color: var(--main-color-black);
+}
+.customModel{
+    color: var(--main-color-blue);
+}
+.textCard{
+    font-weight: 400;
+        font-size: 12px;
+        line-height: 1.3;
+        color: var(--main-color-minor-grey);
+}
+.textCard:first-child{
+    margin-bottom: 4px;
+}
+.textCard:last-child{
+    margin-bottom: 30px;
+}

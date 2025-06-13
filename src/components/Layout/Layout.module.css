@@ -1,0 +1,7 @@
+.layoutWrapper{
+    display: flex;
+    flex-direction: column;
+}
+.outlet{
+    width: 100%;
+}

@@ -1,0 +1,10 @@
+.wrapperHeader{
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: var(--main-color-blue-white);
+border-bottom: 1px solid #f2f4f7;
+    padding: 24px 120px;
+    height: 68px;
+    width: auto;
+}
