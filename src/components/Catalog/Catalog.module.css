@@ -1,5 +1,8 @@
 .cardList{
     display: flex;
-    gap: 32px 48px;
-    flex-wrap: calc((100% - 4*32px)/12);
+    gap: 48px 32px;
+    flex-wrap: wrap;
+}
+.cardItem{
+    width: calc((100% - 3*32px)/4);
 }

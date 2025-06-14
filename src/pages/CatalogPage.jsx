@@ -1,8 +1,13 @@
 import React from 'react'
+import FilterForm from '../components/FilterForm/FilterForm'
+import Catalog from '../components/Catalog/Catalog'
 
 const CatalogPage = () => {
   return (
-    <div>CatalogPage</div>
+    <div className='container'>
+      <FilterForm />
+      <Catalog/>
+    </div>
   )
 }
 

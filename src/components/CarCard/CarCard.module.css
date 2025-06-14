@@ -2,16 +2,20 @@
     width: 276px;
         height: 424px;
         display: flex;
-            align-items: center;
-            justify-content: space-between;
+            align-items: flex-start;
+            justify-content: center;
             flex-direction: column;
           padding: 0px;
 }
 .wrapperImg{
     border-radius: 14px;
+    overflow: hidden;
         width: 276px;
         height: 268px;
         margin-bottom: 16px;
+}
+.wrapperImg img {
+    object-fit: cover;
 }
 .iconFavorite{
     fill: var(--main-color-blue-white);
@@ -37,6 +41,7 @@
   display: flex;
   justify-content: space-between;  
   margin-bottom: 8px;
+  width: 276px;
 }
 .titleSecond{
     font-weight: 500;
@@ -53,9 +58,9 @@
         line-height: 1.3;
         color: var(--main-color-minor-grey);
 }
-.textCard:first-child{
+.textCard:first-of-type{
     margin-bottom: 4px;
 }
-.textCard:last-child{
+.textCard:last-of-type{
     margin-bottom: 30px;
 }

@@ -1,0 +1,122 @@
+.form{
+margin: 0 auto;
+    width: 924px;
+    height: 68px;
+    display: flex;
+    align-items: end;
+    gap: 16px;
+    margin-top: 84px;
+    margin-bottom: 56px;
+}
+.form button{
+        padding: 12px 51px;
+        width: 156px;
+        height: 44px;
+}
+.fieldWrapper{
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+}
+.labelInputWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+label{
+    font-weight: 400;
+        font-size: 12px;
+        line-height: 1.3;
+        color: var(--main-color-minor-grey);
+}
+.input{
+    border-radius: 12px;
+        padding: 0 16px;
+        width: 204px;
+        height: 44px;
+        background-color: var(--main-color-gray-white);
+        font-weight: 500;
+            font-size: 16px;
+            line-height: 1.25;
+            color:var(--main-color-black);
+}
+.mileageInputsContainer{
+    display: flex;
+    width: 320px;
+}
+.customLabelFrom {
+    top: 19%;
+    left: 50%;
+    transform: translateY(-50%);
+}
+.customLabelTo {
+    top: 19%;
+        left: 60%;
+        transform: translateY(-60%);
+}
+.mileageLabelParent{
+    position: fixed;
+       
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.25;
+        color: var(--main-color-black);
+        /*  */
+
+            pointer-events: none;
+            z-index: 3;
+        
+}
+
+
+.inputTo, .inputFrom {
+    padding-left: 52px;
+    position: relative;
+    width: 100%;
+    height: 44px;
+    border-radius: 12px;
+    background-color: var(--main-color-gray-white);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--main-color-black); }
+ /* .inputFrom{
+    padding-left: 50px
+ }
+ .inputTo{
+    padding-left: 40px;
+ } */
+ /* .mileageLabelInputWrapper{
+    position: relative;
+    width: 160px;
+ } */
+
+.mileageLabelInputWrapper > .input {
+    width: 160px;
+}
+/* .inputFrom::before {
+    content: 'From';
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--main-color-black);
+    pointer-events: none;
+}
+
+.inputTo::before {
+    content: 'To';
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--main-color-black);
+    pointer-events: none;
+} */

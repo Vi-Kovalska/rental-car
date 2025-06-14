@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './CarCard.module.css'
+import { useNavigate } from 'react-router-dom';
 const CarCard = ({ id, img, description,  brand, model, year, rentalPrice, address, rentalCompany, type, mileage}) => {
     const arrayAdress = address.split(',');
     const city = arrayAdress[1];
@@ -7,8 +8,9 @@ const CarCard = ({ id, img, description,  brand, model, year, rentalPrice, addre
 
     const arrayNumbers = String(mileage).split('');
     const firstNum = arrayNumbers.shift();
-    const mileageUI = `${firstNum} ${otherNums.join('')} km`;
+    const mileageUI = `${firstNum} ${arrayNumbers.join('')} km`;
 
+    const navigate = useNavigate();
   return (
       <div className={s.wrapperCard}>
           <div className={s.wrapperImg}>
@@ -18,7 +20,7 @@ const CarCard = ({ id, img, description,  brand, model, year, rentalPrice, addre
           <div className={s.wrapperSecondTitleAndPrice}><h2 className={s.titleSecond}>{brand} <span className={s.customModel}>{`${model},`}</span> {year}</h2> <p className={s.titleSecond}>{`$${rentalPrice}`}</p></div>
           <p className={s.textCard}>{`${city} | ${country} | ${rentalCompany} | `}</p>
           <p className={s.textCard}>{`${type} | ${mileageUI}`}</p>
-          <button>Read more</button>
+          <button onClick={() => navigate(`/catalog/${id}`)}>Read more</button>
       </div>
   )
 }
