@@ -1,0 +1,27 @@
+.wrapper {
+    position: relative;
+    width: 196px;
+}
+
+.arrowWrapper {
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.arrow {
+    width: 16px;
+    height: 16px;
+    fill: #121417;
+}
+
+.up .arrow {
+    transform: rotate(180deg);
+}
+
+.error {
+    font-size: 12px;
+    color: red;
+    margin-top: 4px;
+}

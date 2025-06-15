@@ -7,6 +7,7 @@ import { selectFilters, selectPage } from '../../redux/filters/selectors';
 import { getCars } from '../../redux/cars/operations';
 import { incrementPage } from '../../redux/filters/slice';
 import Loader from '../Loader/Loader';
+import { useNavigate } from 'react-router-dom';
 
 
 const Catalog = () => {
@@ -17,7 +18,7 @@ const Catalog = () => {
   const hasMore = useSelector(selectHasMore);
   const isLoading = useSelector(selectLoading);
   const error = useSelector(selectError)
-
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(getCars({ page: 1, limit: 8, filters, append: false }));
   }, [dispatch, page, filters]);
@@ -25,12 +26,11 @@ const Catalog = () => {
   const handleLoadMore = () => {
     dispatch(incrementPage());
     dispatch(getCars({ page, limit: 8, filters, append: false }));
-
   };
     return (
         <div className={s.wrapperFilter}>
         <ul className={s.cardList}>
-          {cars.length <= 0 && !error && <h1>There are no matches for your request. Try again!</h1>}
+          {cars.length <= 0 && !error && <div><h1>There are no matches for your request. Try again!</h1></div>}
           {cars.map((item) => <li key={item.id} className={s.cardItem}><CarCard {...item} /></li>)}
             </ul>
             {hasMore && !isLoading && !error && (

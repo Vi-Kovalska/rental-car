@@ -1,11 +1,12 @@
 import { Form, Formik, Field, ErrorMessage } from 'formik';
-import React, { useEffect, useId, useState} from 'react'
+import React, { useEffect, useId} from 'react'
 import *as Yup from 'yup'
 import s from './FilterForm.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { selectBrands, selectCars } from '../../redux/cars/selectors';
-import { getBrands, getCars } from '../../redux/cars/operations';
+import { getBrands } from '../../redux/cars/operations';
 import { setFilters} from '../../redux/filters/slice';
+import CustomSelect from '../CustomSelect/CustomSelect';
 
 const FilterForm = () => {
   const brandFieldId = useId();
@@ -42,6 +43,7 @@ const FilterForm = () => {
   const handleSubmit = (values, actions) => {
     dispatch(setFilters(values));
     actions.resetForm();
+    
   };
 
  
@@ -54,35 +56,21 @@ const FilterForm = () => {
             <div className={s.fieldWrapper}>
               <div className={s.labelInputWrapper}>
                 <label htmlFor={brandFieldId}>Car brand</label>
-                <Field
-                  id={brandFieldId}
-                  as="select"
-                  name="brand"
-                  type="text"
-                  className={s.input}
-                >
-                  <option value="" disabled>Choose a brand</option>
-                  {brands.map((brand) => (
-                    <option key={brand} value={brand}>{brand}</option>
-                  ))}
-                </Field>
+                <CustomSelect
+  name="brand"
+  placeholder="Choose a brand"
+  options={brands.map((b) => ({ label: b, value: b }))}
+/>
                 <ErrorMessage name="brand" component="p" className={s.error} />
               </div>
 
               <div className={s.labelInputWrapper}>
                 <label htmlFor={priceFieldId}>Price/ 1 hour</label>
-                <Field
-                  id={priceFieldId}
-                  as="select"
-                  name="rentalPrice"
-                  type="text"
-                  className={s.input}
-                >
-                  <option value="" disabled>Choose a price</option>
-                  {cars.map((item) => (
-                    <option key={crypto.randomUUID()} value={item.rentalPrice}>{item.rentalPrice}</option>
-                  ))}
-                </Field>
+                <CustomSelect
+  name="rentalPrice"
+  placeholder="Choose a price"
+  options={[30, 40, 50, 60, 70, 80].map(p => ({ label: `$${p}`, value: p }))}
+/>
                 <ErrorMessage name="rentalPrice" component="p" className={s.error} />
               </div>
 
