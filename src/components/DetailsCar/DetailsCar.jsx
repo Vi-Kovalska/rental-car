@@ -15,7 +15,6 @@ const DetailsCar = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         if (idByCar) {
-            console.log('idByCar:', idByCar);
           dispatch(getCarById(idByCar));
         }
       }, [dispatch, idByCar]);
