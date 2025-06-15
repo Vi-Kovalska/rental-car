@@ -7,7 +7,6 @@ import { selectFilters, selectPage } from '../../redux/filters/selectors';
 import { getCars } from '../../redux/cars/operations';
 import { incrementPage } from '../../redux/filters/slice';
 import Loader from '../Loader/Loader';
-import toast from 'react-hot-toast';
 
 
 const Catalog = () => {

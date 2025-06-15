@@ -1,5 +1,5 @@
 import { Form, Formik, Field, ErrorMessage } from 'formik';
-import React, { useEffect, useId} from 'react'
+import React, { useEffect, useId, useState} from 'react'
 import *as Yup from 'yup'
 import s from './FilterForm.module.css'
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,11 +29,13 @@ const FilterForm = () => {
 
   const FeedbackSchema = Yup.object().shape({
     minMileage: Yup.number()
-      .min(0, 'Must be 0 or more')
-      .nullable(),
-      maxMileage: Yup.number()
-      .min(Yup.ref('minMileage'), 'To must be greater than From')
-      .nullable()
+    .min(0, 'Must be 0 or more')
+    .nullable(),
+  maxMileage: Yup.number()
+    .when('minMileage', (minMileage, schema) => 
+      schema.min(minMileage || 0, 'To must be greater than From')
+    )
+    .nullable(),
   });
 
 
@@ -42,7 +44,7 @@ const FilterForm = () => {
     actions.resetForm();
   };
 
-  
+ 
 
   return (
     <>
@@ -93,7 +95,8 @@ const FilterForm = () => {
                       id={mileageFromFieldId}
                       name="minMileage"
                       type="number"
-                      className={`${s.input} ${s.inputFrom}`}
+                    className={`${s.input} ${s.inputFrom}`}
+                
                     />
                     <ErrorMessage name="minMileage" component="p" className={s.error} />
                   </div>

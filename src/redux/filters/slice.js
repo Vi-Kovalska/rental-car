@@ -18,9 +18,6 @@ const slice = createSlice({
     incrementPage: (state) => {
       state.page += 1;
     },
-    // resetCars: (state) => {
-    //   state.page = 1;
-    // },
     setFilters: (state, action) => {
       state.filters = action.payload;
       state.page = 1;

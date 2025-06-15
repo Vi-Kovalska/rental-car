@@ -6,6 +6,7 @@
             justify-content: center;
             flex-direction: column;
           padding: 0px;
+          position: relative;
 }
 .wrapperImg{
     border-radius: 14px;
@@ -18,25 +19,24 @@
     object-fit: cover;
 }
 .iconFavorite{
+        cursor: pointer;
     fill: var(--main-color-blue-white);
-    transition: fill var(--main-transition);
+    transition: fill stroke var(--main-transition);
 }
-.iconFavorite:hover, .iconFavorite:focus, .iconFavorite:active{
+.iconFavorite.liked{
     fill: var(--main-color-blue);
+    stroke: var(--main-color-blue);
 }
 .btnFavorite{
     border: none;
     background-color: transparent;
-    width: 16px;
-    height: 16px;
-    transition: background-color var(--main-transition);
-    position: fixed;
+    width: 30px;
+    height: 30px;
+    position: absolute;
         top: 16px;
         right: 16px;
 }
-.btnFavorite:hover, .btnFavorite:focus, .btnFavorite:active{
-    background-color: var(--main-color-blue);
-}
+
 .wrapperSecondTitleAndPrice{
   display: flex;
   justify-content: space-between;  
