@@ -30,7 +30,7 @@ const Catalog = () => {
     return (
         <div className={s.wrapperFilter}>
         <ul className={s.cardList}>
-          {cars.length <= 0 && !error && <div><h1>There are no matches for your request. Try again!</h1></div>}
+          {cars.length <= 0 && !error && <div><h1>There are no matches for your request. Try again!</h1>c</div>}
           {cars.map((item) => <li key={item.id} className={s.cardItem}><CarCard {...item} /></li>)}
             </ul>
             {hasMore && !isLoading && !error && (

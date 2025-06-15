@@ -50,17 +50,17 @@ label{
     width: 320px;
 }
 .customLabelFrom {
-    top: 33%;
-    left: 50%;
+    top: 51%;
+    right: 27%;
     transform: translateY(-50%);
 }
 .customLabelTo {
-    top: 33%;
-        left: 62%;
+    top: 51%;
+        right: 43%;
         transform: translateY(-62%);
 }
 .mileageLabelParent{
-    position: fixed;
+    position: relative;
        
         font-size: 16px;
         font-weight: 500;
