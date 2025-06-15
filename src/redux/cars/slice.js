@@ -5,9 +5,9 @@ const initialState = {
   items: [],
   loading: false,
   error: null,
-  idCar: "",
   brands: [],
   carById: {},
+  hasMore: true,
 };
 
 const handlePending = (state) => {
@@ -30,17 +30,26 @@ const slice = createSlice({
   name: "cars",
   initialState,
   reducers: {
-    setIdCar: (state, { payload }) => {
-      state.idCar = payload;
+    setCarByID: (state, { payload }) => {
+      state.carById = payload;
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getCars.pending, handlePending)
-      .addCase(getCars.fulfilled, (state, { payload }) => {
+      .addCase(getCars.fulfilled, (state, { payload, meta }) => {
         handleFulfilled(state, payload);
-        state.items = payload;
+        if (meta.arg.append) {
+          state.items.push(...payload);
+        } else {
+          state.items = payload;
+        }
+
+        if (payload.length < meta.arg.limit) {
+          state.hasMore = false;
+        }
       })
+
       .addCase(getCars.rejected, handleRejected)
       .addCase(getBrands.pending, handlePending)
       .addCase(getBrands.fulfilled, (state, { payload }) => {
@@ -58,5 +67,4 @@ const slice = createSlice({
   },
 });
 
-export const { setIdCar } = slice.actions;
 export const carsReducer = slice.reducer;

@@ -1,0 +1,86 @@
+.wrapperDet{
+    display: flex;
+    gap: 72px;
+    margin-top: 104px;
+}
+.imgCar{
+    border-radius: 19px;
+        width: 640px;
+        height: 512px;
+        overflow: hidden;
+        margin-bottom: 40px;
+}
+.imgCar img {
+    object-fit: cover;
+}
+.detailsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.mainTitle{
+    font-weight: 600;
+        font-size: 24px;
+        line-height: 1.3;
+        color: var(--main-color-black);
+        margin-bottom: 8px;
+        text-align: left
+}
+.idSpan{
+    font-weight: 500;
+        font-size: 16px;
+        line-height: 1.25;
+        color: var(--main-color-minor-grey);
+        margin-left: 16px;
+        width: 88px;
+        overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            display: inline-block;
+}
+.paragraph{
+    font-weight: 500;
+        font-size: 16px;
+        line-height: 1.25;
+        color: var(--main-color-black);
+}
+.locationMileageWrapper{
+    display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+        margin-bottom: 16px;
+}
+.price{
+    font-weight: 600;
+        font-size: 24px;
+        line-height: 1.3;
+        color:var(--main-color-blue);
+        margin-bottom: 32px;
+}
+.description{
+    margin-bottom: 88px;
+    text-align: left;
+    font-weight: 500;
+        font-size: 16px;
+        line-height: 1.25;
+        color: var(--main-color-black);
+}
+.secondTitle{font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--main-color-black);
+margin-bottom: 20px;
+}
+
+    .conditionsList{
+        display: flex;
+        flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+    }
+    .detailsContainer:last-child{
+        margin-bottom: 0;
+    }

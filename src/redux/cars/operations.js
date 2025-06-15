@@ -4,12 +4,26 @@ axios.defaults.baseURL = "https://car-rental-api.goit.global";
 
 export const getCars = createAsyncThunk(
   "cars/getAll",
-  async ({ signal }, thunkAPI) => {
+  async ({ page = 1, limit = 8, filters = {}, signal }, thunkAPI) => {
+    const { brand, rentalPrice, minMileage, maxMileage } = filters;
     try {
-      const { data } = await axios.get("/cars", { signal });
-      return data.cars;
+      const params = {
+        page,
+        limit,
+        brand,
+        rentalPrice,
+        minMileage,
+        maxMileage,
+      };
+
+      const { data } = await axios.get("/cars", {
+        params,
+        signal,
+      });
+
+      return data.cars || data;
     } catch (error) {
-      if (error.name === "CanceledError") {
+      if (axios.isCancel(error) || error.name === "CanceledError") {
         return thunkAPI.rejectWithValue("ABORTED");
       }
       return thunkAPI.rejectWithValue(error.message);

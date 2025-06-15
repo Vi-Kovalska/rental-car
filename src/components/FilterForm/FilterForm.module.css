@@ -65,14 +65,18 @@ label{
         font-weight: 500;
         line-height: 1.25;
         color: var(--main-color-black);
-        /*  */
-
             pointer-events: none;
             z-index: 3;
         
 }
 
-
+.error{
+    color: var(--main-color-black);
+        border: 1px solid red;
+        border-radius: 4px;
+        text-shadow: rgb(255, 0, 0) 1px 0 10px;
+        padding: 5px;
+}
 .inputTo, .inputFrom {
     padding-left: 52px;
     position: relative;
