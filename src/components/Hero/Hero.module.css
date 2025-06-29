@@ -4,9 +4,11 @@
     background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        width: auto;
-        height: auto;
+        width: 100%;
+        height: 100%;
         display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 2dppx),
@@ -27,21 +29,62 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        width: 800px;
-        margin: 436px 329px 60px 329px;
+        width: 280px;
+        margin-top: 250px;
 }
 .title{
     font-weight: 700;
-        font-size: 60px;
-        line-height: 1.2;
+        font-size: 36px;
+        line-height: 1.1;
         color: var(--main-color-white);
         margin-bottom: 16px;
-        min-width: 783px;
+        width: 280px;
 }
 .paragraphHero{
-    font-weight: 600;
-        font-size: 24px;
-        line-height: 1.3;
+    font-weight: 400;
+        font-size: 20px;
+        line-height: 1.1;
         color: var(--main-color-white);
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+    .contentWrapper {
+            width: 560px;
+            /* margin: 436px 329px 60px 329px; */
+        }
+        .title {
+            font-weight: 700;
+            font-size: 60px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            margin-top: 200px;
+            min-width: 560px;
+        }
+    
+        .paragraphHero {
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 1.3;
+            margin-bottom: 20px;   }
+}
+
+@media (min-width: 1025px) {
+    .contentWrapper {
+            width: 800px;
+            /* margin: 436px 329px 60px 329px; */
+        }
+    
+        .title {
+            font-weight: 700;
+            font-size: 60px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            min-width: 783px;
+        }
+    
+        .paragraphHero {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 1.3;
+            margin-bottom: 40px;   }
 }

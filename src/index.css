@@ -73,9 +73,9 @@ img {
 }
 
 .container {
-  max-width: 1440px;
-  min-height: 700px;
-  padding: 0 120px;
+  min-width: 320px;
+  height: 100vh;
+  padding: 0 20px;
 }
 .imgFormContainer{
   display: flex;
@@ -91,4 +91,50 @@ img {
     text-align: center;
     color: var(--main-color-black);
   margin-top: 80px;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  button {
+      font-weight: 600;
+  font-size: 16px;
+    line-height: 1.25;
+    width: 276px;
+    height: 44px;
+  }
+  
+  .container {
+    min-width: 600px;
+    min-height: 100vh;
+    padding: 0 60px;
+  }
+  
+  .titleCatalogPage {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--main-color-black);
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 1025px) {
+  button {
+    font-weight: 600;
+      font-size: 16px;
+      line-height: 1.25;
+      width: 276px;
+        height: 44px;
+  }
+    .container {
+      min-width: 1025px;
+      min-height: 700px;
+      padding: 0 120px; }
+            .titleCatalogPage {
+              font-weight: 700;
+              font-size: 60px;
+              line-height: 1.2;
+              text-align: center;
+              color: var(--main-color-black);
+              margin-top: 80px;     }
 }

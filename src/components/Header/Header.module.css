@@ -4,9 +4,17 @@ align-items: center;
 justify-content: space-between;
 background-color: var(--main-color-blue-white);
 border-bottom: 1px solid #f2f4f7;
-    padding: 24px 120px;
-    height: 68px;
+    padding: 10px 12px;
+    height: 38px;
     width: 100%;
     position: fixed;
     z-index: 2000;
 }
+@media (min-width: 600px) and (max-width: 1024px) {
+    .wrapperHeader{
+    padding: 24px 120px;
+    height: 68px;
+    }
+}
+
+@media (min-width: 1025px) {}
