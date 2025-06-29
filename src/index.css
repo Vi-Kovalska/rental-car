@@ -40,8 +40,11 @@ ul {
 a {
   color: currentColor;
   text-decoration: none;
+  transition: color var(--main-transition);
 }
-
+a:hover, a:focus{
+  color: var(--main-color-blue);
+}
 button {
   cursor: pointer;
   display: flex;
@@ -71,6 +74,7 @@ img {
 
 .container {
   max-width: 1440px;
+  min-height: 700px;
   padding: 0 120px;
 }
 .imgFormContainer{
@@ -79,4 +83,12 @@ img {
 }
 .contentContainer{
   display: flex;
+}
+.titleCatalogPage{
+  font-weight: 700;
+    font-size: 60px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--main-color-black);
+  margin-top: 80px;
 }

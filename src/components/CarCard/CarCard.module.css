@@ -21,6 +21,7 @@
 .iconFavorite{
         cursor: pointer;
     fill: var(--main-color-blue-white);
+    stroke: var(--main-color-blue-white);
     transition: fill stroke var(--main-transition);
 }
 .iconFavorite.liked{

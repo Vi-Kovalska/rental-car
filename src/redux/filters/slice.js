@@ -15,9 +15,6 @@ const slice = createSlice({
   name: "filters",
   initialState,
   reducers: {
-    incrementPage: (state) => {
-      state.page += 1;
-    },
     setFilters: (state, action) => {
       state.filters = action.payload;
       state.page = 1;
@@ -26,7 +23,6 @@ const slice = createSlice({
 });
 
 export const {
-  incrementPage,
   resetCars,
   setFilters,
   setBrand,

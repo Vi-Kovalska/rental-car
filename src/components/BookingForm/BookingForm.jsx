@@ -22,8 +22,8 @@ const BookingForm = () => {
       'Date must be today or later',
       function (value) {
         const today = new Date();
-        today.setHours(0, 0, 0, 0); // обнуляем время
-  
+        today.setHours(0, 0, 0, 0); 
+
         const selectedDate = new Date(value);
         selectedDate.setHours(0, 0, 0, 0);
   
@@ -66,7 +66,7 @@ const BookingForm = () => {
           </div>
           <div className={s.fieldWrapper}>
             <label htmlFor={commentId}></label>
-            <Field id={commentId} name='comment' type='text' className={s.input} placeholder='Comment'/>
+            <Field id={commentId} name='comment' type='textarea' className={s.input} placeholder='Comment'/>
             <ErrorMessage name='comment' component='p' className={s.error}/>
         </div>
           <button type='submit' className={s.btnSub}>Send</button>

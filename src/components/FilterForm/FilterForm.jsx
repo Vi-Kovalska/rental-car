@@ -3,10 +3,11 @@ import React, { useEffect, useId} from 'react'
 import *as Yup from 'yup'
 import s from './FilterForm.module.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { selectBrands, selectCars } from '../../redux/cars/selectors';
+import { selectBrands } from '../../redux/cars/selectors';
 import { getBrands } from '../../redux/cars/operations';
 import { setFilters} from '../../redux/filters/slice';
 import CustomSelect from '../CustomSelect/CustomSelect';
+import clsx from 'clsx';
 
 const FilterForm = () => {
   const brandFieldId = useId();
@@ -14,7 +15,6 @@ const FilterForm = () => {
   const mileageFromFieldId = useId();
 
   const brands = useSelector(selectBrands);
-  const cars = useSelector(selectCars);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const FilterForm = () => {
     <>
       <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={FeedbackSchema}>
 
-          <Form className={s.form}>
+          <Form className={clsx(s.form, s.container)}>
             <div className={s.fieldWrapper}>
               <div className={s.labelInputWrapper}>
                 <label htmlFor={brandFieldId}>Car brand</label>

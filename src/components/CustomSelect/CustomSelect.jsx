@@ -31,7 +31,26 @@ const CustomSelect = ({ name, options, placeholder }) => {
         components={{ DropdownIndicator }}
         isClearable
         classNamePrefix="custom"
+       
         styles={{
+          valueContainer: (base) => ({
+            ...base,
+            paddingLeft: '19px',
+            paddingRight: '19px',
+          }),
+          placeholder: (base) => ({
+            ...base,
+            margin: '0', 
+            color: 'var(--main-color-black)',
+            fontWeight: '500',
+fontSize: '16px',
+lineHeight: '1.25',
+          }),
+         
+          indicatorsContainer: (base) => ({
+            ...base,
+            marginRight: '19px',
+          }),
           control: (base, state) => ({
             ...base,
             border: 'none',
@@ -40,8 +59,10 @@ const CustomSelect = ({ name, options, placeholder }) => {
             minHeight: '44px',
             boxShadow: 'none',
             '&:hover': {
-              borderColor: '#3470FF',
+              borderColor: 'none',
             },
+            backgroundColor: 'var(--main-color-gray-white)',
+            width: '204px',
           }),
           menu: (base) => ({
             ...base,
@@ -53,15 +74,32 @@ const CustomSelect = ({ name, options, placeholder }) => {
           }),
           option: (base, { isFocused, isSelected }) => ({
             ...base,
-            backgroundColor: isSelected
-              ? '#3470FF'
-              : isFocused
-              ? '#E9F0FF'
-              : '#fff',
-            color: isSelected ? '#fff' : '#121417',
+            fontWeight: '500',
+            fontSize: '16px',
+            lineHeight: '1.25',
+            color: `${isFocused ? 'var(--main-color-black)' : 'var(--main-color-minor-grey)'}`,
             cursor: 'pointer',
             padding: '10px 12px',
           }),
+          singleValue: (base) => ({
+            ...base,
+            color: 'var(--main-color-black)',
+            fontWeight: '500',
+fontSize: '16px',
+lineHeight: '1.25',
+          }),
+          menuList: (base) => ({
+            ...base,
+            position: 'absolute',
+            top: '0',
+            border: '1px solid var(--main-color-gray-white)',
+borderRadius: '12px',
+width: '204px',
+      height: '272px',
+      boxShadow: '0 4px 36px 0 rgba(0, 0, 0, 0.02)',
+            backgroundColor: 'var(--main-color-gray-white)',
+           
+          })
         }}
       />
       {meta.touched && meta.error && (

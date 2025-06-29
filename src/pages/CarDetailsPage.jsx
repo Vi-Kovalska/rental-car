@@ -3,11 +3,11 @@ import DetailsCar from '../components/DetailsCar/DetailsCar'
 
 const CarDetailsPage = () => {
   return (
-    <div className='container contentContainer'>
+    <main className='container contentContainer'>
   
       <DetailsCar />
       
-    </div>
+    </main>
   )
 }
 

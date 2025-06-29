@@ -4,7 +4,8 @@ import './App.css'
 import Layout from './components/Layout/Layout'
 const CarDetailsPage = lazy(() => import ('./pages/CarDetailsPage'));
 const CatalogPage = lazy(() => import('./pages/CatalogPage'));
-import HomePage from './pages/HomePage'
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+import HomePage from './pages/HomePage';
 import { Toaster } from 'react-hot-toast';
 import Loader from './components/Loader/Loader';
 import { useDispatch } from 'react-redux';
@@ -28,7 +29,8 @@ function App() {
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage/>} />
           <Route path='/catalog' element={<CatalogPage/>} />
-          <Route path='/catalog/:id' element={<CarDetailsPage/>} />
+            <Route path='/catalog/:id' element={<CarDetailsPage />} />
+            <Route path='*' element={<NotFoundPage/>} />
         </Route>
         </Routes>
         </Suspense>

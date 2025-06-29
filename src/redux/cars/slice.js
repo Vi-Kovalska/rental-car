@@ -20,8 +20,12 @@ const handleFulfilled = (state) => {
 };
 const handleRejected = (state, { payload }) => {
   state.loading = false;
+  console.log(payload, typeof payload);
+
   if (payload === "ABORTED") {
     state.error = null;
+  } else if (payload === "Request failed with status code 404") {
+    state.error = 404;
   } else {
     state.error = payload?.message || "Something went wrong";
   }

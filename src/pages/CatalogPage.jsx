@@ -4,10 +4,11 @@ import Catalog from '../components/Catalog/Catalog'
 
 const CatalogPage = () => {
   return (
-    <div className='container'>
+    <main className='container'>
+      <h1 className='titleCatalogPage'>Find your perfect rental car</h1>
       <FilterForm />
       <Catalog/>
-    </div>
+    </main>
   )
 }
 
